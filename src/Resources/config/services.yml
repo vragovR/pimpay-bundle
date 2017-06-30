@@ -1,0 +1,8 @@
+services:
+  pimpay.handler.open_sll:
+    class: PimpayBundle\Handler\OpenSslCryptoHandler
+    public: false
+    arguments: ["%pimpay%"]
+  pimpay.service.api:
+    class: PimpayBundle\Service\ApiService
+    arguments: ["%pimpay%", "@pimpay.handler.open_sll"]
