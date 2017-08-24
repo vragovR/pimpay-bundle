@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\Model;
 
 /**
@@ -10,30 +11,126 @@ class OrderState
     /**
      * @var string
      */
-    public $id;
+    private $id;
 
     /**
      * @var float
      */
-    public $cost;
+    private $cost;
 
     /**
      * @var string
      */
-    public $uniformPimpayDeliveryStatus;
+    private $uniformPimpayDeliveryStatus;
 
     /**
      * @var string
      */
-    public $customDeliveryStatus;
+    private $customDeliveryStatus;
 
     /**
      * @var string
      */
-    public $deliveryServiceDeliveryStatus;
+    private $deliveryServiceDeliveryStatus;
 
     /**
      * @var \DateTime
      */
-    public $time;
+    private $time;
+
+    /**
+     * @return string
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     */
+    public function setId(string $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return float
+     */
+    public function getCost(): float
+    {
+        return $this->cost;
+    }
+
+    /**
+     * @param float $cost
+     */
+    public function setCost(float $cost)
+    {
+        $this->cost = $cost;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUniformPimpayDeliveryStatus(): string
+    {
+        return $this->uniformPimpayDeliveryStatus;
+    }
+
+    /**
+     * @param string $uniformPimpayDeliveryStatus
+     */
+    public function setUniformPimpayDeliveryStatus(string $uniformPimpayDeliveryStatus)
+    {
+        $this->uniformPimpayDeliveryStatus = $uniformPimpayDeliveryStatus;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomDeliveryStatus(): string
+    {
+        return $this->customDeliveryStatus;
+    }
+
+    /**
+     * @param string $customDeliveryStatus
+     */
+    public function setCustomDeliveryStatus(string $customDeliveryStatus)
+    {
+        $this->customDeliveryStatus = $customDeliveryStatus;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeliveryServiceDeliveryStatus(): string
+    {
+        return $this->deliveryServiceDeliveryStatus;
+    }
+
+    /**
+     * @param string $deliveryServiceDeliveryStatus
+     */
+    public function setDeliveryServiceDeliveryStatus(string $deliveryServiceDeliveryStatus)
+    {
+        $this->deliveryServiceDeliveryStatus = $deliveryServiceDeliveryStatus;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTime(): \DateTime
+    {
+        return $this->time;
+    }
+
+    /**
+     * @param \DateTime $time
+     */
+    public function setTime(\DateTime $time)
+    {
+        $this->time = $time;
+    }
 }

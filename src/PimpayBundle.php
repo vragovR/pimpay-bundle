@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;

@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\Handler;
 
 use PimpayBundle\Service\SoapClientService;

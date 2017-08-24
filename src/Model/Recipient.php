@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\Model;
 
 /**
@@ -8,17 +9,74 @@ namespace PimpayBundle\Model;
 class Recipient
 {
     /**
-     * @var string
+     * @var string|null
      */
-    public $fio;
+    private $fio;
 
     /**
-     * @var string
+     * @var string|null
      */
-    public $phone;
+    private $phone;
 
     /**
-     * @var string
+     * @var string|null
      */
-    public $email;
+    private $email;
+
+    /**
+     * @return string
+     */
+    public function getFio(): string
+    {
+        return $this->fio;
+    }
+
+    /**
+     * @param string|null $fio
+     * @return $this
+     */
+    public function setFio(string $fio = null)
+    {
+        $this->fio = $fio;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone(): string
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string|null $phone
+     * @return $this
+     */
+    public function setPhone(string $phone = null)
+    {
+        $this->phone = $phone;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string|null $email
+     * @return $this
+     */
+    public function setEmail(string $email = null)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
 }

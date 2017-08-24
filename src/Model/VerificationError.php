@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\Model;
 
 /**
@@ -10,5 +11,21 @@ class VerificationError
     /**
      * @var string
      */
-    public $message;
+    private $message;
+
+    /**
+     * @return string
+     */
+    public function getMessage(): string
+    {
+        return $this->message;
+    }
+
+    /**
+     * @param string $message
+     */
+    public function setMessage(string $message)
+    {
+        $this->message = $message;
+    }
 }

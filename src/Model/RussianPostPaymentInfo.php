@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\Model;
 
 /**
@@ -10,15 +11,63 @@ class RussianPostPaymentInfo
     /**
      * @var int
      */
-    public $id;
+    private $id;
 
     /**
      * @var string
      */
-    public $postId;
+    private $postId;
 
     /**
      * @var RussianPostPayment[]
      */
-    public $payments;
+    private $payments;
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId(int $id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPostId(): string
+    {
+        return $this->postId;
+    }
+
+    /**
+     * @param string $postId
+     */
+    public function setPostId(string $postId)
+    {
+        $this->postId = $postId;
+    }
+
+    /**
+     * @return RussianPostPayment[]
+     */
+    public function getPayments(): array
+    {
+        return $this->payments;
+    }
+
+    /**
+     * @param RussianPostPayment[] $payments
+     */
+    public function setPayments(array $payments)
+    {
+        $this->payments = $payments;
+    }
 }

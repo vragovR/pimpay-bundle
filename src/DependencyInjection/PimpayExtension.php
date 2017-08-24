@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;

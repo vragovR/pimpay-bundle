@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\Model;
 
 class UpsertResultResponse
@@ -6,10 +7,42 @@ class UpsertResultResponse
     /**
      * @var integer
      */
-    public $count;
+    private $count;
 
     /**
      * @var UpsertResultItem[]
      */
-    public $orders;
+    private $orders;
+
+    /**
+     * @return int
+     */
+    public function getCount(): int
+    {
+        return $this->count;
+    }
+
+    /**
+     * @param int $count
+     */
+    public function setCount(int $count)
+    {
+        $this->count = $count;
+    }
+
+    /**
+     * @return UpsertResultItem[]
+     */
+    public function getOrders(): array
+    {
+        return $this->orders;
+    }
+
+    /**
+     * @param UpsertResultItem[] $orders
+     */
+    public function setOrders(array $orders)
+    {
+        $this->orders = $orders;
+    }
 }

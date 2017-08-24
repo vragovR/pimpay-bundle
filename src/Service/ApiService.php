@@ -105,4 +105,22 @@ class ApiService
     {
         return $this->soapClient->getClient($this->token, $tin);
     }
+
+    /**
+     * @param AcceptClientParams $params
+     * @return mixed
+     */
+    public function acceptClient(AcceptClientParams $params)
+    {
+        return $this->soapClient->acceptClient($this->token, $params);
+    }
+
+    /**
+     * @param array $orders
+     * @return mixed
+     */
+    public function upsertOrders(array $orders)
+    {
+        return $this->soapClient->upsertOrders($this->token, $orders);
+    }
 }

@@ -288,7 +288,7 @@
             <xsd:complexType name="Claim">
                 <xsd:all>
                     <xsd:element name="termType" type="tns:ClaimTermType" minOccurs="0" maxOccurs="1"/>
-                    <xsd:element name="paymentSum" type="xsd:float"  minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="paymentSum" type="xsd:float" minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="paymentDate" type="xsd:date" minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="tin" type="tns:tinType" minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="contractPartyName" type="xsd:string" minOccurs="0" maxOccurs="1"/>

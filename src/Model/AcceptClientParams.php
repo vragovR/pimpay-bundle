@@ -1,4 +1,5 @@
 <?php
+
 namespace PimpayBundle\Model;
 
 /**
@@ -10,25 +11,120 @@ class AcceptClientParams
     /**
      * @var string
      */
-    public $legalEntityName;
+    private $legalEntityName;
 
     /**
      * @var string
      */
-    public $tin;
+    private $tin;
 
     /**
      * @var string
      */
-    public $shopName;
+    private $shopName;
 
     /**
      * @var string
      */
-    public $email;
+    private $email;
 
     /**
      * @var string
      */
-    public $mobile;
+    private $mobile;
+
+    /**
+     * @return string
+     */
+    public function getLegalEntityName(): string
+    {
+        return $this->legalEntityName;
+    }
+
+    /**
+     * @param string $legalEntityName
+     * @return $this
+     */
+    public function setLegalEntityName(string $legalEntityName)
+    {
+        $this->legalEntityName = $legalEntityName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTin(): string
+    {
+        return $this->tin;
+    }
+
+    /**
+     * @param string $tin
+     * @return $this
+     */
+    public function setTin(string $tin)
+    {
+        $this->tin = $tin;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getShopName(): string
+    {
+        return $this->shopName;
+    }
+
+    /**
+     * @param string $shopName
+     * @return $this
+     */
+    public function setShopName(string $shopName)
+    {
+        $this->shopName = $shopName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     * @return $this
+     */
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMobile(): string
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * @param string $mobile
+     * @return $this
+     */
+    public function setMobile(string $mobile)
+    {
+        $this->mobile = $mobile;
+
+        return $this;
+    }
 }
