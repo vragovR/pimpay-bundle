@@ -44,7 +44,7 @@ class Order
     private $base;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $createdAt;
 
@@ -150,9 +150,9 @@ class Order
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreatedAt(): string
     {
         return $this->createdAt;
     }
@@ -163,7 +163,7 @@ class Order
      */
     public function setCreatedAt(\DateTime $createdAt)
     {
-        $this->createdAt = $createdAt;
+        $this->createdAt = $createdAt->format('Y-m-d H:i:s');
 
         return $this;
     }
