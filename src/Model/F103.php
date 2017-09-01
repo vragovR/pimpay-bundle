@@ -14,7 +14,7 @@ class F103
     private $number;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $date;
 
@@ -28,25 +28,31 @@ class F103
 
     /**
      * @param int $number
+     * @return $this
      */
     public function setNumber(int $number)
     {
         $this->number = $number;
+
+        return $this;
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getDate(): \DateTime
+    public function getDate(): string
     {
         return $this->date;
     }
 
     /**
      * @param \DateTime $date
+     * @return $this
      */
     public function setDate(\DateTime $date)
     {
-        $this->date = $date;
+        $this->date = $date->format('Y-m-d');
+
+        return $this;
     }
 }

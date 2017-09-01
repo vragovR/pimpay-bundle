@@ -14,12 +14,12 @@ class RussianPostPayment
     private $sum;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $paymentDate;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $registeredAt;
 
@@ -40,9 +40,9 @@ class RussianPostPayment
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getPaymentDate(): \DateTime
+    public function getPaymentDate(): string
     {
         return $this->paymentDate;
     }
@@ -52,13 +52,13 @@ class RussianPostPayment
      */
     public function setPaymentDate(\DateTime $paymentDate)
     {
-        $this->paymentDate = $paymentDate;
+        $this->paymentDate = $paymentDate->format('Y-m-d');
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getRegisteredAt(): \DateTime
+    public function getRegisteredAt(): string
     {
         return $this->registeredAt;
     }
@@ -68,6 +68,6 @@ class RussianPostPayment
      */
     public function setRegisteredAt(\DateTime $registeredAt)
     {
-        $this->registeredAt = $registeredAt;
+        $this->registeredAt = $registeredAt->format('Y-m-d H:i:s');
     }
 }

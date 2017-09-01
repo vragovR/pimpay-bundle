@@ -9,7 +9,7 @@ namespace PimpayBundle\Model;
 class DeliveryStatusHistoryItem
 {
     /**
-     * @var \DateTime
+     * @var string
      */
     private $time;
 
@@ -29,9 +29,9 @@ class DeliveryStatusHistoryItem
     private $deliveryServiceDeliveryStatus;
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getTime(): \DateTime
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -42,7 +42,7 @@ class DeliveryStatusHistoryItem
      */
     public function setTime(\DateTime $time)
     {
-        $this->time = $time;
+        $this->time = $time->format('Y-m-d H:i:s');
 
         return $this;
     }

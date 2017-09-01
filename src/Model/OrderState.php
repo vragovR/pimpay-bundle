@@ -34,7 +34,7 @@ class OrderState
     private $deliveryServiceDeliveryStatus;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $time;
 
@@ -119,9 +119,9 @@ class OrderState
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getTime(): \DateTime
+    public function getTime(): string
     {
         return $this->time;
     }
@@ -131,6 +131,6 @@ class OrderState
      */
     public function setTime(\DateTime $time)
     {
-        $this->time = $time;
+        $this->time = $time->format('Y-m-d H:i:s');
     }
 }

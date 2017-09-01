@@ -14,7 +14,7 @@ class PaymentOrder
     private $num;
 
     /**
-     * @var \DateTime
+     * @var string
      */
     private $date;
 
@@ -33,26 +33,32 @@ class PaymentOrder
 
     /**
      * @param int $num
+     * @return $this
      */
     public function setNum(int $num)
     {
         $this->num = $num;
+
+        return $this;
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getDate(): \DateTime
+    public function getDate(): string
     {
         return $this->date;
     }
 
     /**
      * @param \DateTime $date
+     * @return $this
      */
     public function setDate(\DateTime $date)
     {
-        $this->date = $date;
+        $this->date = $date->format('Y-m-d');
+
+        return $this;
     }
 
     /**
@@ -65,9 +71,12 @@ class PaymentOrder
 
     /**
      * @param float $sum
+     * @return $this
      */
     public function setSum(float $sum)
     {
         $this->sum = $sum;
+
+        return $this;
     }
 }
