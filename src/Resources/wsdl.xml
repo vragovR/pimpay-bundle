@@ -113,6 +113,7 @@
                                  minOccurs="1" maxOccurs="1"/>
                     <xsd:element name="tin" type="tns:tinType"
                                  minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="agreement" type="" />
                     <xsd:element name="shopName" type="xsd:string"
                                  minOccurs="1" maxOccurs="1"/>
                     <xsd:element name="email" type="xsd:string"
@@ -130,6 +131,8 @@
                                  minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="isMoneyTransferPossible" type="xsd:boolean"
                                  minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="isActive" type="xsd:boolean"
+                                 minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="paymentOrderPurpose" type="xsd:string"
                                  minOccurs="1" maxOccurs="1"/>
                     <xsd:element name="ordersCount" type="xsd:integer"
@@ -191,6 +194,10 @@
                     <xsd:element name="moneyRecipient" type="tns:moneyRecipientType"
                                  minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="claim" type="tns:Claim"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="deliveryTimeInDays" type="xsd:integer"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="returnInfo" type="tns:OrderReturnInfo"
                                  minOccurs="0" maxOccurs="1"/>
                 </xsd:all>
 
@@ -264,13 +271,27 @@
             </xsd:complexType>
             <xsd:complexType name="OrderItem">
                 <xsd:all>
+                    <xsd:element name="id" type="xsd:integer"
+                                 minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="name" type="xsd:string"
                                  minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="sku" type="xsd:string"
+                                 minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="value" type="xsd:float"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="cost" type="xsd:float"
                                  minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="count" type="xsd:integer"
                                  minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="weight" type="xsd:float"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="length" type="xsd:float"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="width" type="xsd:float"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="height" type="xsd:float"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="vatValue" type="tns:VatValueType"
                                  minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="category" type="xsd:string"
                                  minOccurs="0" maxOccurs="1"/>
@@ -316,6 +337,26 @@
                 </xsd:all>
 
             </xsd:complexType>
+            <xsd:complexType name="OrderReturnInfo">
+                <xsd:all>
+                    <xsd:element name="isReturn" type="xsd:boolean"
+                                 minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="originOrderIds" type="tns:OrderIds"
+                                 minOccurs="0" maxOccurs="1"/>
+                </xsd:all>
+            </xsd:complexType>
+            <xsd:complexType name="OrderIds">
+                <xsd:complexContent>
+                    <xsd:restriction base="soap-enc:Array">
+                        <xsd:attribute ref="soap-enc:arrayType" wsdl:arrayType="tns:OrderId[]"/>
+                    </xsd:restriction>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:string name="OrderId">
+                <xsd:all>
+                </xsd:all>
+
+            </xsd:string>
             <xsd:complexType name="UpsertResultResponse">
                 <xsd:all>
                     <xsd:element name="count" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
@@ -352,6 +393,15 @@
                 <xsd:restriction base="xsd:string">
                     <xsd:enumeration value="reg"/>
                     <xsd:enumeration value="fed"/>
+
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="VatValueType">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="vat_18"/>
+                    <xsd:enumeration value="vat_10"/>
+                    <xsd:enumeration value="vat_0"/>
+                    <xsd:enumeration value="vat_no"/>
 
                 </xsd:restriction>
             </xsd:simpleType>
@@ -419,6 +469,7 @@
                 <xsd:attribute name="dc" type="xsd:float"/>
                 <xsd:attribute name="cs" type="xsd:float"/>
                 <xsd:attribute name="ins" type="xsd:float"/>
+                <xsd:attribute name="tsc" type="xsd:float"/>
             </xsd:complexType>
             <xsd:complexType name="CustomTransactions">
                 <xsd:complexContent>
