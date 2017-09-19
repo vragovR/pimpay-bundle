@@ -353,11 +353,6 @@
                     </xsd:restriction>
                 </xsd:complexContent>
             </xsd:complexType>
-            <xsd:string name="OrderId">
-                <xsd:all>
-                </xsd:all>
-
-            </xsd:string>
             <xsd:complexType name="UpsertResultResponse">
                 <xsd:all>
                     <xsd:element name="count" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
