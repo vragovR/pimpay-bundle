@@ -113,7 +113,8 @@
                                  minOccurs="1" maxOccurs="1"/>
                     <xsd:element name="tin" type="tns:tinType"
                                  minOccurs="1" maxOccurs="1"/>
-                    <xsd:element name="agreement" type="" />
+                    <xsd:element name="agreement" type="xsd:string"
+                                 minOccurs="0" maxOccurs="1"/>
                     <xsd:element name="shopName" type="xsd:string"
                                  minOccurs="1" maxOccurs="1"/>
                     <xsd:element name="email" type="xsd:string"
